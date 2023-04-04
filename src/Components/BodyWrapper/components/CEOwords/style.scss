@@ -1,0 +1,69 @@
+@import "../../../../variable.scss";
+
+.ceo__container {
+  // grid-area: ceowords;
+  margin: $--section-margin;
+
+  .wrapper {
+    width: 90%;
+    margin: $--section-margin;
+    display: flex;
+    gap: 50px;
+    align-items: center;
+    max-width: 1120px;
+    flex-wrap: wrap;
+
+    @media screen and (min-width:768px) {
+      flex-wrap: nowrap;
+      gap: 50px;
+    }
+
+    .image__container {
+      position: relative;
+      width: 100%;
+
+      &::before {
+        position: absolute;
+        left: -15px;
+        bottom: -20px;
+        border: 1px solid #000;
+        content: "";
+        z-index: -1;
+        width: 100%;
+        height: 100%;
+
+        @media screen and (min-width:1024px) {
+          left: -40px;
+          bottom: -30px;
+        }
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+    }
+    .testimonial {
+      display: flex;
+      flex-direction: column;
+      gap: $--section-gap;
+      h2 {
+        font-size: 26px;
+        line-height: 1.3;
+        padding: 15px 0 20px;
+        font-family: $--paragraph-font-family;
+        font-weight: 400;
+      }
+      .info {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        p {
+          font-family: $--ceo-heading;
+        }
+
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+@import "../../variable.scss";
+
+.video__container{
+    grid-area: video;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    // padding: 50px 0;
+    gap: $--section-gap;
+    margin: $--section-margin;
+    text-align: center;
+
+
+    >div {
+        width: 90%;
+        margin: 0 auto;
+
+        @media screen and (min-width:1025px) {
+            width: 80%;
+        }
+
+        h1 {
+            font-size: $--heading-font-size;
+            text-align: center;
+            padding: 10px 0;
+            color: $--btn-bg-color;
+        }
+        q{
+            letter-spacing: .2px;
+            text-align: center;
+            font-size: 18px;
+            font-family: $--paragraph-font-family;
+        }
+    }
+    .iframe__container {
+        padding: 20px 0;
+
+        iframe {
+            width: 100%;
+        }
+
+    }
+}

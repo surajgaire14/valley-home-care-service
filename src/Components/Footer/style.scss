@@ -1,0 +1,117 @@
+@import "../../variable.scss";
+
+.footer__container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  margin: $--section-margin;
+
+  @media screen and (min-width:1025px) {
+    width: 80%;
+    padding: 5vh 0;
+  }
+
+  .footer {
+    width: 80%;
+    padding-bottom: 40px;
+    
+    @media screen and (min-width:769px) {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px,1fr));
+      width: 100%;
+      justify-items: center;
+    }
+
+    .links {
+      p{
+        a {
+          font-size: 18px;
+          color: #000;
+          display: inline-block;
+
+          &::after {
+            content: "";
+            transform: scale(0);
+            border-bottom: 2px solid #000;
+            transition: transform 250ms ease-in-out;
+            display: block;
+          }
+          &:hover {
+            &::after {
+              transform: scale(1);
+              transform-origin: 0% 50%;
+            }
+          }
+        }
+      }
+    }
+    
+
+    > div {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px;
+
+      h1 {
+        font-family: $--heading-font-family;
+      }
+
+      p {
+        font-family: $--paragraph-font-family;
+        font-size: 18px;
+      }
+
+      input,button {
+        all: unset;
+      }
+      input {
+        font-family: $--paragraph-font-family;
+        padding: 10px ;
+      }
+
+      .buttons {
+        display: flex;
+        gap: 10px;
+        border: 1px solid #ccc;
+        justify-content: space-between;
+
+        button {
+          padding: 5px 15px;
+          cursor: pointer;
+          background-color: #ccc;
+          font-family: $--heading-font-family;
+          transition: .4s ease-in-out;
+          font-size: 18px;
+          letter-spacing: .2px;
+
+          &:hover {
+            background-color: #000000;
+            color: #fff;
+          }
+        }
+      }
+
+    }
+  }
+  .copyright {
+    padding: 20px 0;
+    border-top: 1px solid #cccccc77;
+
+    p{
+      gap: 2px;
+      letter-spacing: .2px;
+      font-family: $--paragraph-font-family;
+
+      a {
+        color: rgba(0, 0, 0, 0.805);
+     
+      }
+
+      @media screen and (min-width:769px) {
+        text-align: center;
+      }
+
+    }
+  }
+}

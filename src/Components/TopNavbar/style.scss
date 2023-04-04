@@ -1,0 +1,40 @@
+@import "../../variable.scss";
+
+.topnavbar__container {
+  grid-area: topnavbar;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 8vw;
+  border-bottom: 1px solid #ccc;
+
+  h1 {
+    font-family: $--paragraph-font-family;
+  }
+
+  .company__info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    p {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-family: $--paragraph-font-family;
+    }
+
+    .icons__container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+
+      p {
+        i {
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+main {
+  display: grid;
+  grid-template-areas: "topnavbar" "navbar" "bodywrapper" "footer";
+  grid-template-rows: auto auto 1fr auto;
+  min-height: 100vh;
+  // font-family: "Playfair Display", serif;
+  // overflow: hidden;
+}
+
+@media screen and (max-width: 426px) {
+  main {
+    overflow: hidden;
+  }
+}

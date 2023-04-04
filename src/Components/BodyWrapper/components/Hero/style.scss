@@ -1,0 +1,51 @@
+@import "../../../../variable.scss";
+
+.hero__container {
+  grid-area: hero;
+  height: 80vh;
+  width: 100%;
+  display: grid;
+  .swiper {
+    height: 100%;
+    width: 100%;
+  }
+  .hero__swipper__container {
+    background-image: url("https://images.unsplash.com/photo-1638202993928-7267aad84c31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80");
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    padding: 120px;
+
+    h1 {
+        font-size: 44px;
+        letter-spacing: .2px;
+    }
+    p{
+        font-size: 20px;
+        width: 600PX;
+    }
+    button {
+        all: unset;
+        width: fit-content;
+        border: 1px solid #ccc;
+        padding: 10px 20px;
+        background-color: #36B6AA;
+        cursor: pointer;
+        border-radius: 7px;
+        color: #ffffffe1;
+        transition: .4s ease;
+
+        &:hover {
+            border: 1px solid #36B6AA;
+            background-color: #fff;
+            color: #000;
+        }
+    }
+
+  }
+}

@@ -1,0 +1,35 @@
+@import "../../variable.scss";
+
+.mobilemenu__container {
+  width: 250px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: 0;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  z-index: 9999;
+  background-color: #fff;
+
+  nav {
+    ul {
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      gap: 20px;
+
+      li {
+
+            padding: 5px 0;
+      }
+
+      a {
+        font-family: $--paragraph-font-family;
+        border-bottom: 2px solid #000;
+        display: inline-block;
+        width: 100%;
+        font-size: 18px;
+      }
+    }
+  }
+}

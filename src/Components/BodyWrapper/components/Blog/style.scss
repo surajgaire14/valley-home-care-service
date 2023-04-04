@@ -1,0 +1,85 @@
+@import "../../../../variable.scss";
+
+.blog__container {
+  display: flex;
+  flex-direction: column;
+  gap: $--section-gap;
+  margin: $--section-margin;
+
+  h1 {
+    text-align: center;
+    // padding: 20px 0;
+  }
+
+  .blog__wrapper {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px 20px;
+
+    @media screen and (min-width: 1025px) {
+      grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+      width: 80%;
+    }
+
+    .blog {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      text-align: center;
+      img {
+        object-fit: cover;
+        width: 100%;
+      }
+      .date {
+        color: #0009;
+        font-family: $--paragraph-font-family;
+      }
+      .blog__heading {
+        font-family: $--heading-font-family;
+      }
+      .desp {
+        font-family: $--paragraph-font-family;
+        color: rgba(0, 0, 0, 0.9);
+      }
+      .icons {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 40px;
+        align-items: center;
+
+        p {
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          font-weight: $--paragraph-font-family;
+        }
+      }
+    }
+  }
+  .btn__wrapper {
+    padding: 20px 0;
+    button {
+      all: unset;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto;
+      font-family: $--paragraph-font-family;
+      cursor: pointer;
+      border: 1px solid #ccc;
+      padding: 10px;
+      line-height: 1.4;
+      letter-spacing: 0.1px;
+      transition: 0.4s ease-in;
+
+      &:hover {
+        background-color: #000;
+        color: #fff;
+      }
+    }
+  }
+}
