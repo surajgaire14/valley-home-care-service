@@ -8,7 +8,7 @@
 
   h1 {
     text-align: center;
-    // padding: 20px 0;
+    padding: 20px 0;
   }
 
   .blog__wrapper {
@@ -16,7 +16,7 @@
     margin: 0 auto;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 30px 20px;
+    gap: 30px 40px;
 
     @media screen and (min-width: 1025px) {
       grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
@@ -27,10 +27,16 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      text-align: center;
+      border: 1px solid rgb(206, 213, 221);
       img {
         object-fit: cover;
         width: 100%;
+      }
+      .info {
+        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
       }
       .date {
         color: #0009;
@@ -41,20 +47,21 @@
       }
       .desp {
         font-family: $--paragraph-font-family;
-        color: rgba(0, 0, 0, 0.9);
+        color: rgba(0, 0, 0, 0.657);
+        font-size: 16px;
       }
       .icons {
         display: flex;
         align-items: center;
-        justify-content: center;
-        gap: 40px;
-        align-items: center;
+        // justify-content: center;
+        gap: 20px;
 
         p {
           display: flex;
           align-items: center;
           gap: 5px;
           font-weight: $--paragraph-font-family;
+          font-size: 16px;
         }
       }
     }

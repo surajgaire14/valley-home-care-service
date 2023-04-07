@@ -1,18 +1,28 @@
 import React from "react";
-import quote from "../../../../images/quote.png";
+import ceo from "../../../../images/ceo.webp";
 import "./style.scss";
+import { useScroll, useTransform, motion } from "framer-motion";
 
 const CEOWords = () => {
+  const ceoRef = React.useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: ceoRef,
+    offset: ["end end", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0]);
+
   return (
-    <div className="ceo__container">
+    <motion.div
+      className="ceo__container"
+      ref={ceoRef}
+      style={{ opacity: opacity }}
+    >
+      <h1>Words from our CEO</h1>
       <div className="wrapper">
         <div className="image__container">
-          <img
-            src="https://images.unsplash.com/photo-1680399524821-d4e6b225b0ee?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-            alt="neharika-kc"
-            width={400}
-            height={400}
-          />
+          <img src={ceo} alt="neharika-kc" width={650} height={450} />
         </div>
         <div className="testimonial">
           <h2>
@@ -26,7 +36,7 @@ const CEOWords = () => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,0 +1,39 @@
+.modal__container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba($color: #000000, $alpha: 0.6);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  width: 100vw;
+
+  p {
+    display: flex;
+    justify-content: flex-end;
+    width: 1280px;
+    margin: 0 auto;
+    i {
+      color: #fff;
+      font-size: 38px;
+      cursor: pointer;
+    }
+  }
+  .video__container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    margin: 0 auto;
+
+    iframe {
+      width: 100%;
+    }
+  
+
+  }
+}

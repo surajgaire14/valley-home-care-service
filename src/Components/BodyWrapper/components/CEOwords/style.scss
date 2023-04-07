@@ -1,36 +1,51 @@
 @import "../../../../variable.scss";
 
 .ceo__container {
-  // grid-area: ceowords;
-  margin: $--section-margin;
+  background-color: #f4f5f4;
+  padding: 50px 0;
+
+  h1 {
+    text-align: center;
+    color: #4BC108;
+    padding: 40px 0;
+  }
 
   .wrapper {
-    width: 90%;
-    margin: $--section-margin;
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 40px;
     display: flex;
-    gap: 50px;
     align-items: center;
-    max-width: 1120px;
+    max-width: 1420px;
     flex-wrap: wrap;
+    gap: 30px;
 
-    @media screen and (min-width:768px) {
+
+    @media screen and (min-width:769px) {
       flex-wrap: nowrap;
-      gap: 50px;
+      gap: 100px;
     }
 
     .image__container {
       position: relative;
       width: 100%;
+      z-index: 2;
 
       &::before {
         position: absolute;
         left: -15px;
         bottom: -20px;
-        border: 1px solid #000;
+        border: 2px solid #4BC108;
         content: "";
         z-index: -1;
         width: 100%;
         height: 100%;
+        border-radius: 10px;
+
+        @media screen and (min-width:426px) {
+          left: -30px;
+          bottom: -25px;
+        }
 
         @media screen and (min-width:1024px) {
           left: -40px;
@@ -41,6 +56,8 @@
       img {
         object-fit: cover;
         width: 100%;
+        height: calc(100% - 40px);
+        border-radius: 10px;
       }
     }
     .testimonial {

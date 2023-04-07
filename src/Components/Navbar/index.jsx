@@ -2,9 +2,10 @@ import React from "react";
 import "./style.scss";
 import MobileMenu from "../MobMenu";
 
+
 const Navbar = () => {
   const [showmenu, setShowMenu] = React.useState(false);
-  const mobileNavRef = React.useRef(null)
+  const mobileNavRef = React.useRef(null);
 
   const handleClickOutside = (e) => {
     if (mobileNavRef.current && !mobileNavRef.current.contains(e.target)) {
@@ -24,16 +25,19 @@ const Navbar = () => {
         <div className="nav__links">
           <ul>
             <li>
-              <a href="">Home</a>
+              <a href="/">Home</a>
             </li>
             <li>
-              <a href="">About US</a>
+              <a href="#about__container">About Us</a>
             </li>
             <li>
-              <a href="">Services</a>
+              <a href="#services__container">Services</a>
             </li>
             <li>
-              <a href="">Contact</a>
+              <a href="#services__container">Training</a>
+            </li>
+            <li>
+              <a href="#contact__container">Contact</a>
             </li>
           </ul>
         </div>
@@ -43,7 +47,7 @@ const Navbar = () => {
           </p>
         </div>
       </div>
-      {showmenu && <MobileMenu mobileNavRef = {mobileNavRef}/>}
+      {showmenu && <MobileMenu mobileNavRef={mobileNavRef} />}
     </>
   );
 };
