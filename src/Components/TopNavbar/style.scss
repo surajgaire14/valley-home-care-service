@@ -5,11 +5,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8vw;
+  padding: 10px 5vw;
   border-bottom: 1px solid #ccc;
+  color: #000;
+  background-color: #fff;  
 
-  h1 {
-    font-family: $--paragraph-font-family;
+  .logo__container {
+    img {
+      object-fit: contain;
+      border-radius: 50%;
+    }
   }
 
   .company__info {
@@ -18,11 +23,16 @@
     gap: 20px;
 
     p {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 20px;
-      font-family: $--paragraph-font-family;
+      display: none;
+
+      @media screen and (min-width: 768px) {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 24px;
+        font-family: $--paragraph-font-family;
+        color: #4bc108;
+      }
     }
 
     .icons__container {
@@ -31,8 +41,23 @@
       gap: 15px;
 
       p {
-        i {
-          font-size: 18px;
+        background-color: #3175b5;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+
+        a {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          i {
+            font-size: 20px;
+            color: #fff;
+            cursor: pointer;
+          }
         }
       }
     }

@@ -3,7 +3,7 @@ $--paragraph-font-family: "Noto Serif Georgian", serif;
 
 // headings fonts
 $--heading-font-family:'Lato', sans-serif;;
-$--heading-font-size: 32px; 
+$--heading-font-size: 34px; 
 $--heading-padding: 10px;
 
 // ceo headings
@@ -12,4 +12,9 @@ $--ceo-heading: 'Montserrat', sans-serif;
 // sections gap 
 $--section-gap:20px;
 $--section-margin:4vh auto;
+$--section-padding-inline:0;
+$--section-padding:40px 0;
+
+$--bg-color: #1B212E;
+$--bg-color-btn:#4BC108;
 

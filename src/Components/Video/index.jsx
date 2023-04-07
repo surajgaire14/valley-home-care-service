@@ -1,9 +1,22 @@
+import { useScroll, useTransform, motion } from "framer-motion";
 import React from "react";
 import "./style.scss";
 
 const Video = () => {
+  const videocontainerRef = React.useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: videocontainerRef,
+    offset: ["end end","start end"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [1, 0.1], [0, 1]);
   return (
-    <div className="video__container">
+    <motion.div
+      className="video__container"
+      ref={videocontainerRef}
+      style={{ opacity }}
+    >
       <div>
         <h1>Welcome to Valley Home Care Service</h1>
         <q>
@@ -13,8 +26,6 @@ const Video = () => {
       </div>
       <div className="iframe__container">
         <iframe
-          width="1280"
-          height="725"
           src="https://www.youtube.com/embed/q-70975w9wA"
           title="Valley Home Care Service And Health Center"
           // frameborder="0"
@@ -23,7 +34,7 @@ const Video = () => {
           allowFullScreen={true}
         ></iframe>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

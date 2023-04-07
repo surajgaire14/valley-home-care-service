@@ -1,0 +1,78 @@
+@import "../../../../variable.scss";
+
+.training__container {
+  // width: 80%;
+  // margin: 0 auto;
+  background-color: #f4f5f4;
+  padding: 80px 0;
+  width: 100vw;
+
+  .wrapper {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+
+  span {
+    background-color: #000;
+    height: 2px;
+    width: 50px;
+  }
+
+  h1 {
+    font-family: $--heading-font-family;
+    font-weight: 700;
+  }
+
+  h2 {
+    font-family: $--heading-font-family;
+    font-weight: 700;
+  }
+
+  h1 {
+    font-size: 34px;
+  }
+
+  p {
+    font-family: $--paragraph-font-family;
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  .skills {
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      li {
+        font-family: $--paragraph-font-family;
+        list-style:inside;
+        font-size: 17px;
+      }
+    }
+  }
+
+  button {
+    all: unset;
+    width: fit-content;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    line-height: normal;
+    font-family: $--paragraph-font-family;
+    transition: .4s ease-in-out;
+    background-color: #4BC108;
+    color: #fff;
+
+    // &:hover {
+    //   background-color: #000;
+    //   color: #fff;
+    // }
+
+  }
+
+}

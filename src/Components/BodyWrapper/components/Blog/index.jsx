@@ -3,7 +3,7 @@ import "./style.scss";
 
 const Blog = () => {
   return (
-    <div className="blog__container">
+    <div className="blog__container" id="blog__container">
       <h1>Blog</h1>
       <div className="blog__wrapper">
         {[0, 1, 2].map((_, index) => {
@@ -15,23 +15,25 @@ const Blog = () => {
                 width={400}
                 height={300}
               />
-              <p className="date">April 3rd,2023</p>
-              <h2 className="blog__heading">Many People Prefer to Recover</h2>
-              <p className="desp">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Laboriosam eum voluptas perferendis provident voluptates maiores
-                aut cupiditate accusamus placeat quas?
-              </p>
-              <div className="icons">
-                <p>
-                  <i className="ri-user-line"></i> Suraj Gaire
+              <div className="info">
+                <p className="date">April 3rd,2023</p>
+                <h2 className="blog__heading">Many People Prefer to Recover</h2>
+                <p className="desp">
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+                  Laboriosam eum voluptas perferendis provident voluptates
+                  maiores aut cupiditate accusamus placeat quas?
                 </p>
-                <p>
-                  <i className="ri-chat-3-fill"></i>3
-                </p>
-                <p>
-                  <i className="ri-eye-line"></i> 100
-                </p>
+                <div className="icons">
+                  <p>
+                    <i className="ri-user-line"></i> Suraj Gaire
+                  </p>
+                  <p>
+                    <i className="ri-chat-3-fill"></i>3
+                  </p>
+                  <p>
+                    <i className="ri-eye-line"></i> 100
+                  </p>
+                </div>
               </div>
             </div>
           );
