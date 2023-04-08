@@ -28,6 +28,48 @@ const Training = () => {
     }
   }, [openModal]);
 
+  const skills = [
+    {
+      list: "Advanced cardiovascular life support (ACLS).",
+    },
+    {
+      list: "Patient care",
+    },
+    {
+      list: "Critical care",
+    },
+    {
+      list: "Life support",
+    },
+    {
+      list: "Cardiopulmonary resuscitation (CPR)",
+    },
+    {
+      list: "Trauma",
+    },
+    {
+      list: "Pt. /family education and instruction.",
+    },
+    {
+      list: "Telemetry",
+    },
+    {
+      list: "Discharge planning.",
+    },
+  ];
+
+  const qualities = [
+    "Planning",
+    "Communication",
+    "Critical thinking",
+    "Research",
+    "Computer literacy",
+    "Physical abilities",
+    "Problem solving",
+    "Organization",
+    "Time management",
+  ];
+
   return (
     <>
       <div className="training__container">
@@ -42,34 +84,36 @@ const Training = () => {
             which no nurses have to do volunteer job or observation duties.{" "}
           </p>
 
-          <h2>What Skills will you develop after this training ?</h2>
+          <h2>Trainings Provided</h2>
           <span></span>
           <div className="skills">
             <ul>
-              <li>Advanced cardiovascular life support (ACLS).</li>
-              <li>Patient care</li>
-              <li>Critical care</li>
-              <li>Life support</li>
-              <li>Cardiopulmonary resuscitation (CPR)</li>
-              <li>Trauma</li>
-              <li>Pt. /family education and instruction.</li>
-              <li>Telemetry</li>
-              <li>Discharge planning.</li>
+              {skills.map((skill, index) => {
+                return (
+                  <div key={index}>
+                    <p>
+                      <i className="ri-check-line"></i>
+                    </p>
+                    <li>{skill.list}</li>
+                  </div>
+                );
+              })}
             </ul>
           </div>
-          <h2>What qualities will you develop after this training?</h2>
+          <h2>Qualities developed after training:</h2>
           <span></span>
           <div className="skills">
             <ul>
-              <li>Planning</li>
-              <li>Communication</li>
-              <li>Critical thinking</li>
-              <li>Research</li>
-              <li>Computer literacy</li>
-              <li>Physical abilities</li>
-              <li>Problem solving</li>
-              <li>Organization</li>
-              <li>Time management</li>
+              {qualities.map((quality, index) => {
+                return (
+                  <div key={index}>
+                    <p>
+                      <i className="ri-check-line"></i>
+                    </p>
+                    <li>{quality}</li>
+                  </div>
+                );
+              })}
             </ul>
           </div>
           <button onClick={() => setOpenModal(true)}>Watch Video</button>

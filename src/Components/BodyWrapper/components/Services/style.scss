@@ -46,7 +46,7 @@
     }
 
     @media screen and (min-width: 1025px) {
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(400px,1fr));
       width: 90%;
       gap: 20px;
     }
@@ -73,7 +73,7 @@
           font-family: $--paragraph-font-family;
         }
         h3 {
-          font-size: 28px;
+          font-size: 24px;
           font-weight: 500;
           font-family: $--heading-font-family;
         }

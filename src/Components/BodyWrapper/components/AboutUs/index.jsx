@@ -21,7 +21,7 @@ const AboutUs = () => {
   const translateY = useTransform(scrollYProgress, [0, 0.1], [-100, 0]);
 
   const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
-  const controls = useAnimationControls();
+  // const controls = useAnimationControls();
 
   return (
     <div className="about__container" id="about__container">
@@ -29,11 +29,38 @@ const AboutUs = () => {
         <div className="about">
           <h2>About Us</h2>
           <p>
-            Our mission is to ensure that our senior population will have the
-            support and resources they need to live the life they have earned
-            and now deserve as our generation’s elders.
+            Welcome to{" "}
+            <strong>Valley Health Care Service and Training Center!</strong> We
+            are a team of healthcare professionals and educators dedicated to
+            providing high-quality healthcare services and training to
+            individuals and healthcare organizations.
           </p>
-          <p className="donation">What do donations go towards?</p>
+          <p>
+            At our center, we offer a wide range of healthcare services to meet
+            the needs of our patients. Our team consists of experienced
+            physicians, nurses, and other healthcare professionals who are
+            committed to providing compassionate and patient-centered care. We
+            offer various services, such as primary care, specialized care, and
+            preventive care, to ensure that our patients receive the best
+            possible treatment and support.
+          </p>
+          <p>
+            In addition to our healthcare services, we also offer training and
+            education programs for healthcare professionals. Our training center
+            provides a comprehensive curriculum that covers a wide range of
+            topics related to healthcare, including clinical skills, patient
+            safety, and medical technology. Our training programs are designed
+            to equip healthcare professionals with the knowledge and skills they
+            need to provide high-quality care to their patients.
+          </p>
+          <p>
+            At Valley Health Care Service and Training Center, we are committed
+            to excellence in everything we do. We strive to provide the highest
+            level of care and service to our patients and to support healthcare
+            professionals in their pursuit of excellence. Thank you for
+            considering us for your healthcare needs and training.
+          </p>
+          {/* <p className="donation">What do donations go towards?</p>
           <div className="donation__container">
             <div>
               <p>
@@ -66,7 +93,7 @@ const AboutUs = () => {
                 <i className="ri-check-line"></i>Insurance
               </p>
             </div>
-          </div>
+          </div> */}
           <button>About Us</button>
         </div>
         <div className="images">
@@ -85,9 +112,9 @@ const AboutUs = () => {
               />
             </motion.div>
           </div>
-          <div>
+          {/* <div>
             <button>View all cases</button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
