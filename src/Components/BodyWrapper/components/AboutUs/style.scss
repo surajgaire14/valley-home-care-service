@@ -12,9 +12,9 @@
     margin: 0 auto;
     gap: 20px;
 
-    @media screen and (min-width: 1024px) {
-      width: 80%;
-      grid-template-columns: 1.5fr 2fr;
+    @media screen and (min-width: 1025px) {
+      // width: 80%;
+      grid-template-columns: 1fr .5fr;
       gap: 50px;
     }
     .about {
@@ -38,6 +38,11 @@
         letter-spacing: 0.2px;
         line-height: 22px;
         font-family: $--paragraph-font-family;
+
+        strong {
+          font-weight: bold;
+        }
+
       }
       .donation {
         font-size: 17px;

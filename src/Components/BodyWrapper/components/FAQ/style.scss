@@ -28,7 +28,7 @@
   .faqs {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 15px;
     max-width: 800px;
     width: 100%;
     padding: 10px;
@@ -61,7 +61,7 @@
       p {
         font-family: $--paragraph-font-family;
         color: rgba(0, 0, 0, 0.795);
-        text-align: center;
+        padding: 5px;
       }
     }
   }

@@ -11,8 +11,7 @@
   /* margin: $--section-margin; */
   text-align: center;
   width: 90%;
-margin: 0 auto;
-
+  margin: 0 auto;
 
   > div {
     width: 100%;
@@ -25,19 +24,26 @@ margin: 0 auto;
       font-size: $--heading-font-size;
       text-align: center;
       padding: 10px 0;
-      color: #4BC108;
+      color: #4bc108;
     }
-    q {
-      letter-spacing: 0.2px;
-      text-align: center;
-      font-size: 18px;
+    // q {
+    //   letter-spacing: 0.2px;
+    //   text-align: center;
+    //   font-size: 18px;
+    //   font-family: $--paragraph-font-family;
+    //   font-style: italic;
+    // }
+
+    p {
+      font-size: 24px;
       font-family: $--paragraph-font-family;
-      
+      font-style: italic;
     }
   }
   .iframe__container {
     padding: 20px 0;
     height: 500px;
+    width: 100%;
 
     @media screen and (min-width: 1025px) {
       height: 800px;

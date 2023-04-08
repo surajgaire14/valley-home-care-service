@@ -15,8 +15,17 @@
   p {
     display: flex;
     justify-content: flex-end;
-    width: 1280px;
-    margin: 0 auto;
+    width: 90%;
+    margin: 10px auto;
+
+    @media screen and (min-width: 769px) {
+      width: 80%;
+    }
+
+    @media screen and (min-width: 1025px) {
+      width: 70%;
+    }
+
     i {
       color: #fff;
       font-size: 38px;
@@ -30,10 +39,21 @@
     width: 90%;
     margin: 0 auto;
 
+    @media screen and (min-width: 769px) {
+      width: 80%;
+    }
+
+    @media screen and (min-width: 1025px) {
+      width: 70%;
+    }
+
     iframe {
       width: 100%;
-    }
-  
+      height: 500px;
 
+      @media screen and (min-width:1025px) {
+       height: 700px;
+      }
+    }
   }
 }

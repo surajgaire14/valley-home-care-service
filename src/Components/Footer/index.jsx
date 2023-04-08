@@ -15,12 +15,12 @@ const Footer = () => {
           <img
             src={logo}
             alt="logo"
-            width={150}
-            height={150}
+            width={100}
+            height={100}
             style={{ objectFit: "contain" }}
           />
         </div>
-        <div>
+        <div className="contact__info">
           <h1>Contact Info</h1>
           <p>
             Address: <span>Gwarko,Lalitpur</span>{" "}

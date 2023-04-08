@@ -26,9 +26,11 @@ const CEOWords = () => {
         </div>
         <div className="testimonial">
           <h2>
-            "Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
-            molestias sed magni fuga reiciendis ut dignissimos dolore, porro hic
-            accusamus!"
+            "We start by making staff trained through our training program and
+            mobilized trained staff for assessment while admission directing the
+            Home Care through our trained and energetic staff for the Home care
+            program every steps of the ways until the patients is fully
+            recovered."
           </h2>
           <div className="info">
             <p>- Neharika KC </p>

@@ -7,7 +7,7 @@ const Video = () => {
 
   const { scrollYProgress } = useScroll({
     target: videocontainerRef,
-    offset: ["end end","start end"],
+    offset: ["end end", "start end"],
   });
 
   const opacity = useTransform(scrollYProgress, [1, 0.1], [0, 1]);
@@ -19,10 +19,9 @@ const Video = () => {
     >
       <div>
         <h1>Welcome to Valley Home Care Service</h1>
-        <q>
-          If you could have a perfect medical experience at your doctor’s
-          office, what would it look like?
-        </q>
+        <p>
+          "<i>care with excellence...</i>"
+        </p>
       </div>
       <div className="iframe__container">
         <iframe
@@ -31,7 +30,7 @@ const Video = () => {
           // frameborder="0"
           style={{ border: "none" }}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          allowFullScreen={true}
+          // allowFullScreen={true}
         ></iframe>
       </div>
     </motion.div>

@@ -15,7 +15,6 @@
     margin: 0 auto;
   }
 
-
   span {
     background-color: #000;
     height: 2px;
@@ -25,11 +24,13 @@
   h1 {
     font-family: $--heading-font-family;
     font-weight: 700;
+    color: #4bc108;
   }
 
   h2 {
     font-family: $--heading-font-family;
     font-weight: 700;
+    color: #4bc108;
   }
 
   h1 {
@@ -48,9 +49,18 @@
       flex-direction: column;
       gap: 5px;
 
+      > div {
+        display: flex;
+        gap: 5px;
+
+        i {
+          font-size: 20px;
+          color: #4bc108;
+        }
+      }
+
       li {
         font-family: $--paragraph-font-family;
-        list-style:inside;
         font-size: 17px;
       }
     }
@@ -64,15 +74,13 @@
     cursor: pointer;
     line-height: normal;
     font-family: $--paragraph-font-family;
-    transition: .4s ease-in-out;
-    background-color: #4BC108;
+    transition: 0.4s ease-in-out;
+    background-color: #4bc108;
     color: #fff;
 
     // &:hover {
     //   background-color: #000;
     //   color: #fff;
     // }
-
   }
-
 }

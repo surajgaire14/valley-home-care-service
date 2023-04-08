@@ -26,9 +26,8 @@ const ModelComponent = ({ modalref, setOpenModal }) => {
             height="725"
             src="https://www.youtube.com/embed/IqYIKNr6ADI"
             title="Feedback || Valley Home Care Services &amp; Training  Center"
-            frameborder="0"
+            style={{ border: "none" }}
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
           ></iframe>
         </motion.div>
       </motion.div>
