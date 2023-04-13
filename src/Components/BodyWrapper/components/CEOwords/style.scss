@@ -2,12 +2,15 @@
 
 .ceo__container {
   background-color: #f4f5f4;
-  padding: 50px 0;
+  min-height: 70vh;
+  display: grid;
+  place-items: center;
 
   h1 {
     text-align: center;
     color: #4BC108;
-    padding: 40px 0;
+    font-size: $--heading-font-size;
+    padding: 50px 0;
   }
 
   .wrapper {
@@ -24,7 +27,7 @@
     @media screen and (min-width:769px) {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 40px;
+      gap: 80px;
     }
 
     .image__container {

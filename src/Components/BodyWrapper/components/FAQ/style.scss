@@ -1,67 +1,74 @@
 @import "../../../../variable.scss";
 
 .faq__container {
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 15px;
-  padding: 50px 0;
-
-  h1 {
-    font-family: $--heading-font-family;
-    font-size: 34px;
-    color: #4BC108;
-  }
-
-  p {
-    font-family: $--paragraph-font-family;
-  }
-
-  h3 {
-    font-family: $--heading-font-family;
-    font-weight: 600;
-  }
-
-  .faqs {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 15px;
-    max-width: 800px;
-    width: 100%;
-    padding: 10px;
-    
-    .qstn {
+    padding: 50px 0;
+    h1 {
+      font-family: $--heading-font-family;
+      font-size: 34px;
+      color: #4bc108;
+    }
+
+    p {
+      font-family: $--paragraph-font-family;
+    }
+
+    h3 {
+      font-family: $--heading-font-family;
+      font-weight: 600;
+    }
+
+    .faqs {
       display: flex;
-      border: 1px solid #ccc;
-      justify-content: space-between;
-      cursor: pointer;
-      padding: 10px;
-      color: #4BC108;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 800px;
+      width: 100%;
+      // padding: 10px;
 
-      p {
-        transform: rotate(-90deg);
-        transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-        transition: .4s ease-in-out;
+      .faq {
+        border: 1px solid #ccc;
+      }
 
-        &.show {
-          transform: rotate(0);
-        }
+      .qstn {
+        display: flex;
+        justify-content: space-between;
+        cursor: pointer;
+        padding: 10px;
+        color: #4bc108;
 
-        i {
-          font-size: 24px;
-          cursor: pointer;
-          color: #4BC108;
+        p {
+          transform: rotate(-90deg);
+          transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
+          transition: 0.4s ease-in-out;
+
+          &.show {
+            transform: rotate(0);
+          }
+
+          i {
+            font-size: 24px;
+            cursor: pointer;
+            color: #4bc108;
+          }
         }
       }
-    }
-    .desp {
-      p {
-        font-family: $--paragraph-font-family;
-        color: rgba(0, 0, 0, 0.795);
-        padding: 5px;
+      .desp {
+        p {
+          font-family: $--paragraph-font-family;
+          color: rgba(0, 0, 0, 0.795);
+          padding: 5px;
+        }
       }
     }
   }

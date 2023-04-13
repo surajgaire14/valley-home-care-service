@@ -1,3 +1,4 @@
+import { useScroll, useTransform, motion } from "framer-motion";
 import React from "react";
 import "./style.scss";
 
@@ -14,33 +15,52 @@ const services = [
     img: "https://images.unsplash.com/photo-1584515933487-779824d29309?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
     title: "Comfort Match Guarantee",
   },
+  {
+    img: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+    title: "Productive Training",
+  },
 ];
 
 const Services = () => {
+  const serviceRef = React.useRef(null);
+
+  const { scrollYProgress } = useScroll({
+    target: serviceRef,
+    offset: ["end end", "end start"],
+  });
+
+  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0]);
   return (
-    <div className="services__container" id="services__container">
-      <div className="title__container">
-        <h1>Why Choose Home Valley Care Service ?</h1>
-        <button>Learn More About Us</button>
-      </div>
-      <div className="services">
-        {services.map((service, index) => {
-          return (
-            <div className="service" key={index}>
-              <img
-                src={service.img}
-                alt="unsplash-image"
-                width={"100%"}
-                height={400}
-              />
-              <div className="desp">
-                <h3>{service.title}</h3>
+    <motion.div
+      className="services__container"
+      id="services__container"
+      ref={serviceRef}
+      style={{ opacity: opacity }}
+    >
+      <div className="wrapper">
+        <div className="title__container">
+          <h1>Why Choose Home Valley Care Service ?</h1>
+          <button>Learn More About Us</button>
+        </div>
+        <div className="services">
+          {services.map((service, index) => {
+            return (
+              <div className="service" key={index}>
+                <img
+                  src={service.img}
+                  alt="unsplash-image"
+                  width={"100%"}
+                  height={400}
+                />
+                <div className="desp">
+                  <h3>{service.title}</h3>
+                </div>
               </div>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

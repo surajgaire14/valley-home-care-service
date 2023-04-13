@@ -1,9 +1,11 @@
 import React from "react";
 import "./style.scss";
 import { motion, AnimatePresence } from "framer-motion";
+import { useAnimation } from "../../../../Hooks/useAnimation";
 
 const FAQ = () => {
   const [toggleans, setToggleAnswer] = React.useState({});
+  const faqRef = React.useRef(null);
 
   const toggleState = (id) => {
     setToggleAnswer({ ...toggleans, [id]: !toggleans[id] });
@@ -115,46 +117,54 @@ const FAQ = () => {
     },
   ];
 
-  return (
-    <div className="faq__container">
-      <h1>Frequently Asked Questions</h1>
-      <p>Questions you might ask about our care givers and services.</p>
+  const { opacity } = useAnimation(faqRef);
 
-      <div className="faqs">
-        {faqs.map((faq) => {
-          return (
-            <div key={faq.id}>
-              <div className="qstn" onClick={() => toggleState(faq.id)}>
-                <h3>{faq.question}</h3>
-                <p className={`${toggleans[faq.id] && "show"}`}>
-                  <i className="ri-arrow-down-s-line"></i>
-                </p>
+  return (
+    <motion.div
+      className="faq__container"
+      style={{ opacity: opacity }}
+      ref={faqRef}
+    >
+      <div className="wrapper">
+        <h1>Frequently Asked Questions</h1>
+        <p>Questions you might ask about our care givers and services.</p>
+
+        <div className="faqs">
+          {faqs.map((faq) => {
+            return (
+              <div key={faq.id} className="faq">
+                <div className="qstn" onClick={() => toggleState(faq.id)}>
+                  <h3>{faq.question}</h3>
+                  <p className={`${toggleans[faq.id] && "show"}`}>
+                    <i className="ri-arrow-down-s-line"></i>
+                  </p>
+                </div>
+                <AnimatePresence>
+                  {toggleans[faq.id] && (
+                    <motion.div
+                      className="desp"
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
+                      exit={{ opacity: 0 }}
+                      transition={{
+                        // delay: 0.02,
+                        type: "spring",
+                        stiffness: 50,
+                        damping: 20,
+                      }}
+                    >
+                      {faq.answer.map((answer, index) => {
+                        return <p key={index}>{answer}</p>;
+                      })}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
-              <AnimatePresence>
-                {toggleans[faq.id] && (
-                  <motion.div
-                    className="desp"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{
-                      // delay: 0.02,
-                      type: "spring",
-                      stiffness: 50,
-                      damping: 20,
-                    }}
-                  >
-                    {faq.answer.map((answer, index) => {
-                      return <p key={index}>{answer}</p>;
-                    })}
-                  </motion.div>
-                )}
-              </AnimatePresence>
-            </div>
-          );
-        })}
+            );
+          })}
+        </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

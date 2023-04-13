@@ -7,31 +7,33 @@ const Video = () => {
 
   const { scrollYProgress } = useScroll({
     target: videocontainerRef,
-    offset: ["end end", "start end"],
+    offset: ["end end", "end start"],
   });
 
-  const opacity = useTransform(scrollYProgress, [1, 0.1], [0, 1]);
+  const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0]);
   return (
     <motion.div
       className="video__container"
       ref={videocontainerRef}
-      style={{ opacity }}
+      style={{ opacity: opacity }}
     >
-      <div>
-        <h1>Welcome to Valley Home Care Service</h1>
-        <p>
-          "<i>care with excellence...</i>"
-        </p>
-      </div>
-      <div className="iframe__container">
-        <iframe
-          src="https://www.youtube.com/embed/q-70975w9wA"
-          title="Valley Home Care Service And Health Center"
-          // frameborder="0"
-          style={{ border: "none" }}
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          // allowFullScreen={true}
-        ></iframe>
+      <div className="wrapper">
+        <div>
+          <h1>Welcome to Valley Home Care Service</h1>
+          <p>
+            "<i>care with excellence...</i>"
+          </p>
+        </div>
+        <div className="iframe__container">
+          <iframe
+            src="https://www.youtube.com/embed/q-70975w9wA"
+            title="Valley Home Care Service And Health Center"
+            // frameborder="0"
+            style={{ border: "none" }}
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            // allowFullScreen={true}
+          ></iframe>
+        </div>
       </div>
     </motion.div>
   );

@@ -10,7 +10,7 @@ const TopNavbar = () => {
       </div>
       <div className="company__info">
         <p>
-          <i className="ri-phone-line"></i> <span>01-5201787</span>
+        <i className="ri-phone-fill"></i> <span>01-5201787</span>
         </p>
         <div className="icons__container">
           <p>

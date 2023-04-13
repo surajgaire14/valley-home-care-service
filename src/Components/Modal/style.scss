@@ -11,6 +11,12 @@
   flex-direction: column;
   overflow: hidden;
   width: 100vw;
+  height: min-content;
+  // height: 100vh;
+
+  &:not(.video__container){
+    min-height: 85vh;
+  }
 
   p {
     display: flex;
@@ -38,6 +44,7 @@
     justify-content: center;
     width: 90%;
     margin: 0 auto;
+    // height: auto;
 
     @media screen and (min-width: 769px) {
       width: 80%;

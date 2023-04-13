@@ -1,11 +1,16 @@
 import React from "react";
 import ModelComponent from "../../../Modal";
 import "./style.scss";
+import { motion } from "framer-motion";
+import { useAnimation } from "../../../../Hooks/useAnimation";
 
 const Training = () => {
   const [openModal, setOpenModal] = React.useState(false);
 
   const modalref = React.useRef(null);
+  const trainingRef = React.useRef(null);
+
+  const { opacity } = useAnimation(trainingRef);
 
   const handleClickOutside = (e) => {
     if (modalref.current && !modalref.current.contains(e.target)) {
@@ -72,7 +77,12 @@ const Training = () => {
 
   return (
     <>
-      <div className="training__container">
+      <motion.div
+        className="training__container"
+        id="training__container"
+        ref={trainingRef}
+        style={{ opacity: opacity }}
+      >
         <div className="wrapper">
           <h1>Our Training Programs Help You Build Quality</h1>
           <span></span>
@@ -84,41 +94,49 @@ const Training = () => {
             which no nurses have to do volunteer job or observation duties.{" "}
           </p>
 
-          <h2>Trainings Provided</h2>
-          <span></span>
-          <div className="skills">
-            <ul>
-              {skills.map((skill, index) => {
-                return (
-                  <div key={index}>
-                    <p>
-                      <i className="ri-check-line"></i>
-                    </p>
-                    <li>{skill.list}</li>
-                  </div>
-                );
-              })}
-            </ul>
+          <div className="skills__container">
+            <div className="training">
+              <h2>Trainings Provided</h2>
+              <span></span>
+              <div className="skills">
+                <ul>
+                  {skills.map((skill, index) => {
+                    return (
+                      <div key={index}>
+                        <p>
+                          <i className="ri-check-line"></i>
+                        </p>
+                        <li>{skill.list}</li>
+                      </div>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+            <div className="training">
+              <h2>Qualities developed after training:</h2>
+              <span></span>
+              <div className="skills">
+                <ul>
+                  {qualities.map((quality, index) => {
+                    return (
+                      <div key={index}>
+                        <p>
+                          <i className="ri-check-line"></i>
+                        </p>
+                        <li>{quality}</li>
+                      </div>
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
           </div>
-          <h2>Qualities developed after training:</h2>
-          <span></span>
-          <div className="skills">
-            <ul>
-              {qualities.map((quality, index) => {
-                return (
-                  <div key={index}>
-                    <p>
-                      <i className="ri-check-line"></i>
-                    </p>
-                    <li>{quality}</li>
-                  </div>
-                );
-              })}
-            </ul>
+          <div>
+            <button onClick={() => setOpenModal(true)}>Watch Video</button>
           </div>
-          <button onClick={() => setOpenModal(true)}>Watch Video</button>
         </div>
-      </div>
+      </motion.div>
       {openModal && (
         <ModelComponent modalref={modalref} setOpenModal={setOpenModal} />
       )}

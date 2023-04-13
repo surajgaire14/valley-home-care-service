@@ -5,10 +5,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5vw;
+  padding: 0px 5vw;
   border-bottom: 1px solid #ccc;
   color: #000;
-  background-color: #fff;  
+  background-color: #fff; 
+  
+  @media screen and (min-width:769px) {
+    padding: 0 10vw;
+  }
 
   .logo__container {
     img {
@@ -20,7 +24,7 @@
   .company__info {
     display: flex;
     align-items: center;
-    gap: 20px;
+    gap: 35px;
 
     p {
       display: none;
@@ -28,10 +32,18 @@
       @media screen and (min-width: 768px) {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         font-size: 24px;
         font-family: $--paragraph-font-family;
-        color: #4bc108;
+        // color: #4bc108;
+        color: #000;
+
+
+      }
+      i {
+        color: #3e8415;
+        font-size: 22px;
+        margin-top: 3px;
       }
     }
 
@@ -41,7 +53,8 @@
       gap: 15px;
 
       p {
-        background-color: #3175b5;
+        // background-color: #3175b5;
+        background-color: #3e8415;
         border-radius: 50%;
         display: flex;
         align-items: center;
@@ -54,7 +67,6 @@
           align-items: center;
           justify-content: center;
           i {
-            font-size: 20px;
             color: #fff;
             cursor: pointer;
           }

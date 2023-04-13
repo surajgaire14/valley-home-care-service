@@ -51,6 +51,10 @@
       color: #fff;
       width: 100%;
     }
+    .title {
+      transition: 0.4s ease-in-out;
+      // transform: translateY(100);
+    }
     p {
       font-size: 20px;
       font-family: $--paragraph-font-family;

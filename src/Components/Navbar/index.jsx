@@ -2,7 +2,6 @@ import React from "react";
 import "./style.scss";
 import MobileMenu from "../MobMenu";
 
-
 const Navbar = () => {
   const [showmenu, setShowMenu] = React.useState(false);
   const mobileNavRef = React.useRef(null);
@@ -25,7 +24,9 @@ const Navbar = () => {
         <div className="nav__links">
           <ul>
             <li>
-              <a href="/">Home</a>
+              <a href="#" onClick={() => window.scrollTo(0, 0)}>
+                Home
+              </a>
             </li>
             <li>
               <a href="#about__container">About Us</a>
@@ -34,7 +35,7 @@ const Navbar = () => {
               <a href="#services__container">Services</a>
             </li>
             <li>
-              <a href="#services__container">Training</a>
+              <a href="#training__container">Training</a>
             </li>
             <li>
               <a href="#contact__container">Contact</a>
