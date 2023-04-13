@@ -4,17 +4,20 @@
   gap: 50px;
   padding: 60px 0;
   background-color: #f4f5f4;
-  width: 100vw;
-
+  min-height: 80vh;
+  display: grid;
+  place-items: center;
+  // width: 100vw;
+  
   .wrapper {
     display: grid;
-    width: 90%;
+    width: 90vw;
     margin: 0 auto;
     gap: 20px;
 
     @media screen and (min-width: 1025px) {
       // width: 80%;
-      grid-template-columns: 1fr .5fr;
+      grid-template-columns: 1fr 0.5fr;
       gap: 50px;
     }
     .about {
@@ -28,7 +31,7 @@
 
       h2 {
         color: #4bc108;
-        font-size: 36px;
+        font-size: $--heading-font-size;
         padding: 0 20px;
         border-left: 2px solid;
         font-family: $--heading-font-family;
@@ -42,7 +45,6 @@
         strong {
           font-weight: bold;
         }
-
       }
       .donation {
         font-size: 17px;
@@ -93,11 +95,14 @@
 
       @media screen and (max-width: 426px) {
         display: none;
+        width: 100%;
+        // opacity:0;
       }
 
       > div {
         display: flex;
         gap: 20px;
+        width: 100%;
 
         @media screen and (min-width: 1025px) {
           justify-content: flex-end;

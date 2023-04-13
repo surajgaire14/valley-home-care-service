@@ -1,30 +1,33 @@
 import React from "react";
 import "./style.scss";
 import image from "../../../../images/featureimg.webp";
-import {
-  useScroll,
-  useTransform,
-  motion,
-  useAnimationControls,
-} from "framer-motion";
+import { useScroll, useTransform, motion } from "framer-motion";
+import { useAnimation } from "../../../../Hooks/useAnimation";
 
 const AboutUs = () => {
   const firstimageRef = React.useRef(null);
   const secondimageRef = React.useRef(null);
+  const aboutRef = React.useRef(null);
 
   const { scrollYProgress } = useScroll({
     target: firstimageRef,
     offset: ["end end", "end start"],
   });
 
-  const translate = useTransform(scrollYProgress, [0, 0.1], [100, 0]);
-  const translateY = useTransform(scrollYProgress, [0, 0.1], [-100, 0]);
+  const translate = useTransform(scrollYProgress, [0, 0.3], [100, 0]);
+  const translateY = useTransform(scrollYProgress, [0, 0.3], [-100, 0]);
 
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
-  // const controls = useAnimationControls();
+  const opacity1 = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
+
+  const { opacity } = useAnimation(aboutRef);
 
   return (
-    <div className="about__container" id="about__container">
+    <motion.div
+      className="about__container"
+      id="about__container"
+      ref={aboutRef}
+      style={{ opacity: opacity }}
+    >
       <div className="wrapper">
         <div className="about">
           <h2>About Us</h2>
@@ -100,7 +103,7 @@ const AboutUs = () => {
           <div>
             <motion.div
               ref={firstimageRef}
-              style={{ translateY: translate, opacity: opacity }}
+              style={{ translateY: translate, opacity: opacity1 }}
               transition={{ type: "spring", damping: 0, stiffness: 10 }}
             >
               <img src={image} alt="unsplash_image" />
@@ -117,7 +120,7 @@ const AboutUs = () => {
           </div> */}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
