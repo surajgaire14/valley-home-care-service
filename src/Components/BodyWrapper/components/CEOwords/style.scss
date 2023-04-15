@@ -1,7 +1,8 @@
 @import "../../../../variable.scss";
 
 .ceo__container {
-  background-color: #f4f5f4;
+  // background-color: #f4f5f4;
+  background-color: $--section-bg-color;
   min-height: 70vh;
   display: grid;
   place-items: center;

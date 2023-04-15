@@ -4,9 +4,9 @@
   display: grid;
   place-items: center;
   min-height: 80vh;
-  background-color: #f4f5f4;
+  background-color: $--section-bg-color;
   width: 100vw;  
-
+  padding: 50px 0;
 
 .wrapper {
     display: flex;

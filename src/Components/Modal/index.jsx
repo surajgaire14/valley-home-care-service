@@ -17,18 +17,23 @@ const ModelComponent = ({ modalref, setOpenModal }) => {
           delay: 0.02,
         }}
       >
-        <p>
-          <i className="ri-close-line" onClick={() => setOpenModal(false)}></i>
-        </p>
-        <motion.div ref={modalref} className="video__container">
-          <iframe
-            width="1280"
-            height="725"
-            src="https://www.youtube.com/embed/IqYIKNr6ADI"
-            title="Feedback || Valley Home Care Services &amp; Training  Center"
-            style={{ border: "none" }}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          ></iframe>
+        <motion.div className="video__container">
+          <p>
+            <i
+              className="ri-close-line"
+              onClick={() => setOpenModal(false)}
+            ></i>
+          </p>
+          <div className="video" ref={modalref}>
+            <iframe
+              width="1280"
+              height="725"
+              src="https://www.youtube.com/embed/IqYIKNr6ADI"
+              title="Feedback || Valley Home Care Services &amp; Training  Center"
+              style={{ border: "none" }}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            ></iframe>
+          </div>
         </motion.div>
       </motion.div>
     </AnimatePresence>

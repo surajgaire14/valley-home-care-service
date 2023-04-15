@@ -3,7 +3,8 @@
 .about__container {
   gap: 50px;
   padding: 60px 0;
-  background-color: #f4f5f4;
+  // background-color: #f4f5f4;
+  background-color: $--section-bg-color;
   min-height: 80vh;
   display: grid;
   place-items: center;
@@ -37,9 +38,10 @@
         font-family: $--heading-font-family;
       }
       p {
-        font-size: 18px;
+        font-size: 20px;
         letter-spacing: 0.2px;
-        line-height: 22px;
+        line-height: 130%;
+        // line-height: 22px;
         font-family: $--paragraph-font-family;
 
         strong {
@@ -91,6 +93,8 @@
     .images {
       display: flex;
       flex-direction: column;
+      align-items: center;
+      justify-content: center;
       gap: 20px;
 
       @media screen and (max-width: 426px) {
