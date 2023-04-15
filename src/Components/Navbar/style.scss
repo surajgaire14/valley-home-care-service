@@ -23,7 +23,11 @@
     justify-content: center;
     ul {
       display: flex;
-      gap: 60px;
+      gap: 50px;
+
+      @media screen and (min-width:769px) {
+        gap: 60px;
+      }
 
       li {
         a {
