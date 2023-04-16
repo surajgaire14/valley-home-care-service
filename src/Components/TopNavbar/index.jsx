@@ -1,17 +1,37 @@
 import React from "react";
 import "./style.scss";
-import logo from "../../images/logo.png";
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const TopNavbar = () => {
+  const notify = () => toast("phone number copied successfully");
+
+  const error = () => toast.error("failed to copy phone number");
+
   return (
     <div className="topnavbar__container">
       <div className="logo__container">
-        <img src={logo} alt="logo" width={100} height={100} />
+        <p>
+          <i
+            className="ri-phone-fill"
+            data-tooltip-id="my-tooltip"
+            data-tooltip-content="copy phone number"
+            data-tooltip-place="left"
+            onClick={async () =>
+              await navigator.clipboard
+                .writeText("01-5201787")
+                .then(() => notify())
+                .catch(() => error())
+            }
+          ></i>
+          <span>01-5201787</span>
+        </p>
+        <Tooltip id="my-tooltip" />
+        <ToastContainer position="bottom-right" autoClose={2000} theme="dark" />
       </div>
       <div className="company__info">
-        <p>
-        <i className="ri-phone-fill"></i> <span>01-5201787</span>
-        </p>
         <div className="icons__container">
           <p>
             <a

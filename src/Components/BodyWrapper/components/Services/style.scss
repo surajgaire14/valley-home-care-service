@@ -4,13 +4,15 @@
   display: grid;
   min-height: 80vh;
   place-items: center;
+  // width: 90%;
   .wrapper {
+    width: 90%;
+    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     padding: 80px 0;
-    width: 100vw;
     .title__container {
       display: flex;
       flex-direction: column;
@@ -36,11 +38,10 @@
       }
     }
     .services {
-      width: 90%;
-      margin: 0 auto;
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
       gap: 40px;
+      width: 100%;
 
       @media screen and (min-width: 768px) {
         display: grid;
@@ -50,17 +51,41 @@
 
       @media screen and (min-width: 1025px) {
         grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-        width: 90%;
         gap: 20px;
       }
 
       .service {
-        gap: 5px;
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 2px;
         display: flex;
         flex-direction: column;
+        
         border-top-right-radius: 10px;
         border-top-left-radius: 10px;
+
+        &:nth-child(1){
+          .desp {
+            // background-color: #0188fe;
+            background-color: #f5eec27e;
+            background-color: #fefbe9;
+            // color: #fff;
+          }
+        }
+        &:nth-child(2){
+          .desp {
+            background-color: #fffbf0;
+          }
+        }
+        &:nth-child(3){
+          .desp {
+            background-color: #e1eedd;
+
+          }
+        }
+        &:nth-child(4){
+          .desp {
+            background-color: #f2f2f2;
+          }
+        }
         img {
           object-fit: cover;
           border-top-right-radius: 10px;
@@ -69,11 +94,13 @@
 
         .desp {
           padding: 20px 10px;
+
           p {
             font-weight: 500;
             font-size: 20px;
             letter-spacing: 0.2px;
             font-family: $--paragraph-font-family;
+
           }
           h3 {
             font-size: 24px;

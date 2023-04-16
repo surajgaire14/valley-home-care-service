@@ -1,6 +1,8 @@
 import React from "react";
 import "./style.scss";
 import MobileMenu from "../MobMenu";
+import logo from "../../images/logo.png";
+import { useNavigate } from "react-router";
 
 const Navbar = () => {
   const [showmenu, setShowMenu] = React.useState(false);
@@ -21,32 +23,39 @@ const Navbar = () => {
   return (
     <>
       <div className="navbar__container">
-        <div className="nav__links">
-          <ul>
-            <li>
-              <a href="#" onClick={() => window.scrollTo(0, 0)}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#about__container">About Us</a>
-            </li>
-            <li>
-              <a href="#services__container">Services</a>
-            </li>
-            <li>
-              <a href="#training__container">Training</a>
-            </li>
-            <li>
-              <a href="#contact__container">Contact</a>
-            </li>
-          </ul>
-        </div>
-        <div className="hamburgermenu">
-          <p>
-            <i className="ri-menu-line" onClick={() => setShowMenu(true)}></i>
-          </p>
-        </div>
+        <nav>
+          <div className="logo">
+            <a href="/">
+              <img src={logo} alt="logo" width={80} height={80} />
+            </a>
+          </div>
+          <div className="nav__links">
+            <ul>
+              <li>
+                <a href="#" onClick={() => window.scrollTo(0, 0)}>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about__container">About Us</a>
+              </li>
+              <li>
+                <a href="#services__container">Services</a>
+              </li>
+              <li>
+                <a href="#training__container">Training</a>
+              </li>
+              <li>
+                <a href="#contact__container">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div className="hamburgermenu">
+            <p>
+              <i className="ri-menu-line" onClick={() => setShowMenu(true)}></i>
+            </p>
+          </div>
+        </nav>
       </div>
       {showmenu && <MobileMenu mobileNavRef={mobileNavRef} />}
     </>
