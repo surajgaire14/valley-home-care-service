@@ -5,19 +5,31 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 5vw;
   border-bottom: 1px solid #ccc;
   color: #000;
-  background-color: #fff; 
-  
-  @media screen and (min-width:769px) {
-    padding: 0 10vw;
+  background-color: #018afe;
+  padding: 10px 15vw;
+
+  p {
+    font-size: 22px;
   }
 
   .logo__container {
-    img {
-      object-fit: contain;
-      border-radius: 50%;
+    p {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      // font-size: 24px;
+
+      i {
+        cursor: pointer;
+        color: #fff;
+      }
+
+      span {
+        // color: #5fff03;
+        color: #f2f2f2;
+      }
     }
   }
 
@@ -33,12 +45,8 @@
         display: flex;
         align-items: center;
         gap: 8px;
-        font-size: 24px;
         font-family: $--paragraph-font-family;
-        // color: #4bc108;
         color: #000;
-
-
       }
       i {
         color: #3e8415;
@@ -53,14 +61,10 @@
       gap: 15px;
 
       p {
-        // background-color: #3175b5;
-        background-color: #3e8415;
         border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 40px;
-        height: 40px;
 
         a {
           display: flex;
