@@ -1,18 +1,28 @@
 import React from "react";
 import "./style.scss";
 import { Link } from "react-router-dom";
+import { useAnimation } from "../../Hooks/useAnimation";
+import { motion } from "framer-motion";
 
 const About = () => {
+  const aboutheroRef = React.useRef(null);
+
+  const { opacity } = useAnimation(aboutheroRef);
+
   return (
     <div className="aboutpage__container">
-      <div className="about__heroimg">
+      <motion.div
+        className="about__heroimg"
+        style={{ opacity: opacity }}
+        ref={aboutheroRef}
+      >
         <p>
           <Link to={"/"}>
             <i className="ri-home-4-fill"></i>
           </Link>{" "}
           &gt; About
         </p>
-      </div>
+      </motion.div>
       <div className="about">
         <div className="heading">
           <span></span>

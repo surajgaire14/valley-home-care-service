@@ -7,8 +7,15 @@
   align-items: center;
   border-bottom: 1px solid #ccc;
   color: #000;
-  background-color: #018afe;
-  padding: 10px 15vw;
+  background-color: green;
+  padding: 10px 5vw;
+
+  @media screen and (min-width: 426px) {
+    padding: 10px 5vw;
+  }
+  @media screen and (min-width: 1025px) {
+    padding: 10px 10vw;
+  }
 
   p {
     font-size: 22px;
@@ -19,7 +26,6 @@
       display: flex;
       align-items: center;
       gap: 10px;
-      // font-size: 24px;
 
       i {
         cursor: pointer;
@@ -27,7 +33,6 @@
       }
 
       span {
-        // color: #5fff03;
         color: #f2f2f2;
       }
     }
@@ -70,9 +75,14 @@
           display: flex;
           align-items: center;
           justify-content: center;
+
           i {
             color: #fff;
             cursor: pointer;
+            transition: 0.3s ease-in-out;
+            &:hover {
+              color: $--bg-color-btn;
+            }
           }
         }
       }

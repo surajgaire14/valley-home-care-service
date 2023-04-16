@@ -76,7 +76,7 @@ const AboutUs = () => {
               </p>
             </div>
           </div> */}
-          <button onClick={() => navigate("/about")}>About Us</button>
+          <button onClick={() => navigate("/about")}>Read More</button>
         </div>
         <div className="images">
           <div>
