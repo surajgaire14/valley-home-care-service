@@ -57,7 +57,9 @@ const Navbar = () => {
           </div>
         </nav>
       </div>
-      {showmenu && <MobileMenu mobileNavRef={mobileNavRef} />}
+      {showmenu && (
+        <MobileMenu mobileNavRef={mobileNavRef} setShowMenu={setShowMenu} />
+      )}
     </>
   );
 };

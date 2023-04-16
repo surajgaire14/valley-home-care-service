@@ -20,7 +20,15 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 12vw;
+    padding: 0 5vw;
+
+    @media screen and (min-width: 426px) {
+      padding: 0px 5vw;
+    }
+
+    @media screen and (min-width: 1025px) {
+      padding: 0px 10vw;
+    }
   }
 
   .logo {
@@ -31,11 +39,10 @@
   }
 
   .nav__links {
-    @media screen and (max-width: 426px) {
+    @media screen and (max-width: 769px) {
       display: none;
     }
     display: flex;
-    // justify-content: center;
     ul {
       display: flex;
       gap: 50px;
@@ -60,7 +67,7 @@
     }
   }
   .hamburgermenu {
-    @media screen and (min-width: 426px) {
+    @media screen and (min-width: 769px) {
       display: none;
     }
     p {

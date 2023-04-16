@@ -2,7 +2,15 @@ import React from "react";
 import "./style.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
-const MobileMenu = ({ mobileNavRef }) => {
+const links = [
+  { link: "Home", href: "" },
+  { link: "About Us", href: "#about__container" },
+  { link: "Services", href: "#services__container" },
+  { link: "Contact", href: "#contact__container" },
+  { link: "Training", href: "#training__container" },
+];
+
+const MobileMenu = ({ mobileNavRef, setShowMenu }) => {
   return (
     <AnimatePresence>
       <motion.div
@@ -18,18 +26,16 @@ const MobileMenu = ({ mobileNavRef }) => {
       >
         <nav>
           <ul>
-            <li>
-              <a href="">Home</a>
-            </li>
-            <li>
-              <a href="">About US</a>
-            </li>
-            <li>
-              <a href="">Services</a>
-            </li>
-            <li>
-              <a href="">Contact</a>
-            </li>
+            {links.map((link, index) => {
+              return (
+                <li key={index}>
+                  <a
+                    href={`${link.href}`}
+                    onClick={() => setShowMenu(false)}
+                  >{`${link.link}`}</a>
+                </li>
+              );
+            })}
           </ul>
         </nav>
       </motion.div>

@@ -9,8 +9,11 @@ const Footer = () => {
         <div>
           <h1>About Us</h1>
           <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Mollitia
-            possimus facere officia sint, laborum vero?
+            Welcome to{" "}
+            <strong>Valley Health Care Service and Training Center!</strong> We
+            are a team of healthcare professionals and educators dedicated to
+            providing high-quality healthcare services and training to
+            individuals and healthcare organizations.
           </p>
           <img
             src={logo}

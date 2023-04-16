@@ -1,4 +1,4 @@
-import { useScroll, useTransform, motion } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 
 export const useAnimation = (ref) => {
   // const ref = React.useRef(null)

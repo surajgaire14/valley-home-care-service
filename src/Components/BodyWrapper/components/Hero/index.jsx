@@ -49,7 +49,10 @@ const Hero = () => {
         modules={[Navigation, Autoplay, EffectFade]}
         effect="fade"
         navigation
-        autoplay
+        autoplay={{
+          delay: 5000,
+          disableOnInteraction: false,
+        }}
       >
         {slidesDate.map((data, index) => {
           return (
