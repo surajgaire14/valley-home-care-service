@@ -3,28 +3,55 @@ import "./style.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
 const links = [
-  { link: "Home", href: "" },
+  { link: "Home", href: "#" },
   { link: "About Us", href: "#about__container" },
   { link: "Services", href: "#services__container" },
-  { link: "Contact", href: "#contact__container" },
   { link: "Training", href: "#training__container" },
+  { link: "Contact", href: "#contact__container" },
 ];
 
-const MobileMenu = ({ mobileNavRef, setShowMenu }) => {
+const itemVariants = {
+  closed: {
+    opacity: 0,
+  },
+  open: { opacity: 1 },
+};
+
+const sideVariants = {
+  closed: {
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: -1,
+    },
+  },
+  open: {
+    transition: {
+      staggerChildren: 0.2,
+      staggerDirection: 1,
+    },
+  },
+};
+
+const MobileMenu = ({ mobileNavRef, setShowMenu, open }) => {
   return (
     <AnimatePresence>
+      {/* {open && ( */}
       <motion.div
         className="mobilemenu__container"
         ref={mobileNavRef}
-        initial={{ opacity: 0, x: 250 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: 250 }}
+        initial={{ width: 0 }}
+        animate={{ width: 250 }}
+        exit={{
+          width: 0,
+          transition: { delay: 0.7, duration: 0.3 },
+        }}
+        variants={itemVariants}
         transition={{
-          type: "spring",
-          stiffness: 50,
+          type: "tween",
+          stiffness: 80,
         }}
       >
-        <nav>
+        <motion.nav variants={sideVariants}>
           <ul>
             {links.map((link, index) => {
               return (
@@ -37,8 +64,9 @@ const MobileMenu = ({ mobileNavRef, setShowMenu }) => {
               );
             })}
           </ul>
-        </nav>
+        </motion.nav>
       </motion.div>
+      {/*  )} */}
     </AnimatePresence>
   );
 };

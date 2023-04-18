@@ -3,9 +3,11 @@ import "./style.scss";
 import MobileMenu from "../MobMenu";
 import logo from "../../images/logo.png";
 import { useNavigate } from "react-router";
+import { useCycle } from "framer-motion";
 
 const Navbar = () => {
   const [showmenu, setShowMenu] = React.useState(false);
+  const [open, cycleOpen] = useCycle(false, true);
   const mobileNavRef = React.useRef(null);
 
   const handleClickOutside = (e) => {
@@ -52,13 +54,22 @@ const Navbar = () => {
           </div>
           <div className="hamburgermenu">
             <p>
-              <i className="ri-menu-line" onClick={() => setShowMenu(true)}></i>
+              <i
+                className="ri-menu-fill"
+                onClick={() => {
+                  setShowMenu(true), cycleOpen();
+                }}
+              ></i>
             </p>
           </div>
         </nav>
       </div>
       {showmenu && (
-        <MobileMenu mobileNavRef={mobileNavRef} setShowMenu={setShowMenu} />
+        <MobileMenu
+          mobileNavRef={mobileNavRef}
+          setShowMenu={setShowMenu}
+          open={open}
+        />
       )}
     </>
   );

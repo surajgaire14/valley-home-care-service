@@ -5,17 +5,19 @@
   place-items: center;
   min-height: 80vh;
   background-color: $--section-bg-color;
-  width: 100vw;  
+  width: 100vw;
   padding: 50px 0;
+  scroll-margin-top: 50px;
 
-.wrapper {
+
+  .wrapper {
     display: flex;
     gap: 20px;
     flex-direction: column;
     width: 90%;
     margin: 0 auto;
 
-    @media screen and (min-width:1440px) {
+    @media screen and (min-width: 1440px) {
       width: 80%;
     }
   }
