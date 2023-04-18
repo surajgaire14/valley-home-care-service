@@ -76,12 +76,13 @@ const Training = () => {
   ];
 
   return (
-    <>
+    <div>
       <motion.div
         className="training__container"
         id="training__container"
         ref={trainingRef}
         style={{ opacity: opacity }}
+        
       >
         <div className="wrapper">
           <h1>Our Training Programs Help You Build Quality</h1>
@@ -140,7 +141,7 @@ const Training = () => {
       {openModal && (
         <ModelComponent modalref={modalref} setOpenModal={setOpenModal} />
       )}
-    </>
+    </div>
   );
 };
 

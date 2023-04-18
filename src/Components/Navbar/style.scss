@@ -16,6 +16,10 @@
   // -webkit-backdrop-filter: blur(6.4px);
   // border: 1px solid rgba(255, 255, 255, 0.24);
 
+  @media screen and (max-width:426px) {
+    padding: 0;
+  }
+
   nav {
     display: flex;
     align-items: center;
@@ -72,8 +76,11 @@
     }
     p {
       display: flex;
-
       justify-content: flex-end;
+      
+      i {
+        font-size: 22px;
+      }
     }
   }
 }
