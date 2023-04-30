@@ -41,7 +41,7 @@ const AboutUs = () => {
             providing high-quality healthcare services and training to
             individuals and healthcare organizations.
           </p>
-          
+
           {/* <p className="donation">What do donations go towards?</p>
           <div className="donation__container">
             <div>
@@ -76,7 +76,13 @@ const AboutUs = () => {
               </p>
             </div>
           </div> */}
-          <button onClick={() => navigate("/about")}>Read More</button>
+          <button
+            onClick={() => {
+              navigate("/about"), window.scrollTo(0, 0);
+            }}
+          >
+            Read More
+          </button>
         </div>
         <div className="images">
           <div>

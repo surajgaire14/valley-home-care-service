@@ -2,7 +2,7 @@ import React from "react";
 import "./style.scss";
 import MobileMenu from "../MobMenu";
 import logo from "../../images/logo.png";
-import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
 import { useCycle } from "framer-motion";
 
 const Navbar = () => {
@@ -27,9 +27,9 @@ const Navbar = () => {
       <div className="navbar__container">
         <nav>
           <div className="logo">
-            <a href="/">
+            <Link to={"/"}>
               <img src={logo} alt="logo" width={80} height={80} />
-            </a>
+            </Link>
           </div>
           <div className="nav__links">
             <ul>
