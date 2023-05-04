@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./style.scss";
 import MobileMenu from "../MobMenu";
 import logo from "../../images/logo.png";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useCycle } from "framer-motion";
+import { links } from "../MobMenu";
 
 const Navbar = () => {
   const [showmenu, setShowMenu] = React.useState(false);
   const [open, cycleOpen] = useCycle(false, true);
+  const [activeId, setActiveId] = React.useState(0);
   const mobileNavRef = React.useRef(null);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      let elem = document.getElementById(location.hash.slice(1));
+      if (elem) {
+        elem.scrollIntoView({ behavior: "smooth" });
+      }
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+    }
+  }, [location]);
 
   const handleClickOutside = (e) => {
     if (mobileNavRef.current && !mobileNavRef.current.contains(e.target)) {
@@ -33,23 +47,19 @@ const Navbar = () => {
           </div>
           <div className="nav__links">
             <ul>
-              <li>
-                <a href="#" onClick={() => window.scrollTo(0, 0)}>
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="#about__container">About Us</a>
-              </li>
-              <li>
-                <a href="#services__container">Services</a>
-              </li>
-              <li>
-                <a href="#training__container">Training</a>
-              </li>
-              <li>
-                <a href="#contact__container">Contact</a>
-              </li>
+              {links.map((link, i) => {
+                return (
+                  <li key={i}>
+                    <a
+                      href={link.href}
+                      onClick={() => setActiveId(i)}
+                      className={`${activeId}` == i ? "active" : ""}
+                    >
+                      {link.link}{" "}
+                    </a>
+                  </li>
+                );
+              })}
             </ul>
           </div>
           <div className="hamburgermenu">
