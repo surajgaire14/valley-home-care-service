@@ -22,7 +22,7 @@ const slidesDate = [
   },
 ];
 
-const Hero = () => {
+const Hero = ({ observerRefs }) => {
   // const titleRef = React.useRef(null);
   // const desp = React.useRef(null);
   // const { scrollYProgress } = useScroll({
@@ -53,10 +53,13 @@ const Hero = () => {
           delay: 5000,
           disableOnInteraction: false,
         }}
+        ref={(el) => (observerRefs.current[0] = el)}
       >
         {slidesDate.map((data, index) => {
           return (
-            <SwiperSlide key={index}>
+            <SwiperSlide
+              key={index}
+            >
               <div
                 className="hero__swipper__container"
                 style={{ backgroundImage: `url(${data.img})` }}

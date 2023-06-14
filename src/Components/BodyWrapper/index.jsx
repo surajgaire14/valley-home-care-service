@@ -10,18 +10,17 @@ import Training from "./components/Training";
 import FAQ from "./components/FAQ";
 import "../../variable.scss";
 
-const BodyWrapper = ({observerRefs}) => {
-
+const BodyWrapper = ({ observerRefs }) => {
   return (
     <div className="bodywrapper__container">
-      <Hero/>
+      <Hero observerRefs={observerRefs}/>
       <CEOWords />
       <Video />
-      <AboutUs observerRefs = {observerRefs}  />
-      <Services />
-      <Training />
+      <AboutUs observerRefs={observerRefs} />
+      <Services observerRefs={observerRefs} />
+      <Training observerRefs={observerRefs} />
       <FAQ />
-      <Location />
+      <Location observerRefs={observerRefs} />
     </div>
   );
 };
