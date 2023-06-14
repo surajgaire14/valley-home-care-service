@@ -6,11 +6,12 @@ import { Link, useLocation } from "react-router-dom";
 import { useCycle } from "framer-motion";
 import { links } from "../MobMenu";
 
-const Navbar = () => {
+const Navbar = ({observerRefs}) => {
   const [showmenu, setShowMenu] = React.useState(false);
   const [open, cycleOpen] = useCycle(false, true);
   const [activeId, setActiveId] = React.useState(0);
   const mobileNavRef = React.useRef(null);
+  const observers = React.useRef([])
   const location = useLocation();
 
   useEffect(() => {
@@ -36,6 +37,28 @@ const Navbar = () => {
       document.removeEventListener("mousedown", handleClickOutside, true);
     };
   }, []);
+
+  const observerCallback = async (e, key) => {
+    if (e.length && e[0].isIntersecting) {
+      setActiveId(key);
+    }
+  };
+
+  React.useEffect(() => {
+    if (observerRefs.current?.length && observers.current) {
+      Array.from(Array(10).keys()).forEach((_u, key) => {
+        observers.current[key] = new IntersectionObserver((e) =>
+          observerCallback(e, key)
+        );
+        if (observerRefs.current[key]) {
+          observers.current[key].observe(observerRefs.current[key]);
+        }
+      });
+    }
+    return () =>
+      observers.current?.forEach((observer) => observer?.current?.disconnect());
+  }, [observerRefs, observers]);
+
   return (
     <>
       <div className="navbar__container">

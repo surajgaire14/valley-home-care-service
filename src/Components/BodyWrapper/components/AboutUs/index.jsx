@@ -5,7 +5,7 @@ import { useScroll, useTransform, motion } from "framer-motion";
 import { useAnimation } from "../../../../Hooks/useAnimation";
 import { useNavigate } from "react-router";
 
-const AboutUs = () => {
+const AboutUs = ({ observerRefs }) => {
   const firstimageRef = React.useRef(null);
   const secondimageRef = React.useRef(null);
   const aboutRef = React.useRef(null);
@@ -17,8 +17,8 @@ const AboutUs = () => {
     offset: ["end end", "end start"],
   });
 
-  const translate = useTransform(scrollYProgress, [0, 0.3], [100, 0]);
-  const translateY = useTransform(scrollYProgress, [0, 0.3], [-100, 0]);
+  // const translate = useTransform(scrollYProgress, [0, 0.3], [100, 0]);
+  // const translateY = useTransform(scrollYProgress, [0, 0.3], [-100, 0]);
 
   const opacity1 = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
 
@@ -30,8 +30,9 @@ const AboutUs = () => {
       id="about__container"
       ref={aboutRef}
       style={{ opacity: opacity }}
+      // itemRef={el => console.log(el)}
     >
-      <div className="wrapper">
+      <div className="wrapper" ref={(el) => (observerRefs.current = el)}>
         <div className="about">
           <h2>About Us</h2>
           <p>
@@ -88,12 +89,11 @@ const AboutUs = () => {
           <div>
             <motion.div
               ref={firstimageRef}
-              style={{ translateY: translate, opacity: opacity1 }}
               transition={{ type: "spring", damping: 0, stiffness: 10 }}
             >
               <img src={image} alt="unsplash_image" />
             </motion.div>
-            <motion.div ref={secondimageRef} style={{ translateY, opacity }}>
+            <motion.div ref={secondimageRef}>
               <img
                 src="https://images.unsplash.com/photo-1638202993928-7267aad84c31?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
                 alt="unsplash_image"
