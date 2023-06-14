@@ -117,17 +117,14 @@ const FAQ = () => {
     },
   ];
 
-  const { opacity } = useAnimation(faqRef);
-
   return (
     <motion.div
       className="faq__container"
-      style={{ opacity: opacity }}
       ref={faqRef}
     >
       <div className="wrapper">
         <h1>Frequently Asked Questions</h1>
-        <p>Questions you might ask about our care givers and services.</p>
+        <p className="subtitle">Questions you might ask about our care givers and services.</p>
 
         <div className="faqs">
           {faqs.map((faq) => {
@@ -149,12 +146,16 @@ const FAQ = () => {
                       transition={{
                         // delay: 0.02,
                         type: "spring",
-                        stiffness: 50,
+                        stiffness: 80,
                         damping: 20,
                       }}
                     >
                       {faq.answer.map((answer, index) => {
-                        return <p key={index}>{answer}</p>;
+                        return (
+                          <ul key={index}>
+                            <li>{answer}</li>
+                          </ul>
+                        );
                       })}
                     </motion.div>
                   )}

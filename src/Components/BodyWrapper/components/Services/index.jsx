@@ -46,12 +46,14 @@ const Services = () => {
           {services.map((service, index) => {
             return (
               <div className="service" key={index}>
-                <img
-                  src={service.img}
-                  alt="unsplash-image"
-                  width={"100%"}
-                  height={400}
-                />
+                <div className="img__wrapper">
+                  <img
+                    src={service.img}
+                    alt="unsplash-image"
+                    width={"100%"}
+                    height={400}
+                  />
+                </div>
                 <div className="desp">
                   <h3>{service.title}</h3>
                 </div>

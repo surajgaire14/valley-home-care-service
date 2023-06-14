@@ -27,6 +27,7 @@
     height: 2px;
     width: 50px;
     display: inline-block;
+    // margin: 10px 0;
   }
 
   .skills__container {
@@ -94,9 +95,8 @@
     background-color: #4bc108;
     color: #fff;
 
-    // &:hover {
-    //   background-color: #000;
-    //   color: #fff;
-    // }
+    &:hover {
+      background-color: #44871d;
+    }
   }
 }

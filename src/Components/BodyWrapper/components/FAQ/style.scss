@@ -19,8 +19,13 @@
       color: #4bc108;
     }
 
+    .subtitle {
+      padding: 10px 0;
+    }
+
     p {
       font-family: $--paragraph-font-family;
+      font-size: 20px;
     }
 
     h3 {
@@ -64,10 +69,17 @@
         }
       }
       .desp {
-        p {
-          font-family: $--paragraph-font-family;
-          color: rgba(0, 0, 0, 0.795);
-          padding: 5px;
+        padding-bottom: 10px;
+        ul {
+          box-sizing: border-box;
+          li {
+            width: 90%;
+            margin: 0 auto;
+            font-family: $--paragraph-font-family;
+            color: rgba(0, 0, 0, 0.795);
+            padding: 5px;
+            list-style: disc;
+          }
         }
       }
     }
