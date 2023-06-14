@@ -4,7 +4,7 @@ import "./style.scss";
 import { motion } from "framer-motion";
 import { useAnimation } from "../../../../Hooks/useAnimation";
 
-const Training = () => {
+const Training = ({ observerRefs }) => {
   const [openModal, setOpenModal] = React.useState(false);
 
   const modalref = React.useRef(null);
@@ -84,7 +84,7 @@ const Training = () => {
         style={{ opacity: opacity }}
         
       >
-        <div className="wrapper">
+        <div className="wrapper" ref={(el) => (observerRefs.current[3] = el)}>
           <h1>Our Training Programs Help You Build Quality</h1>
           <span></span>
           <p>

@@ -6,12 +6,12 @@ import { Link, useLocation } from "react-router-dom";
 import { useCycle } from "framer-motion";
 import { links } from "../MobMenu";
 
-const Navbar = ({observerRefs}) => {
+const Navbar = ({ observerRefs }) => {
   const [showmenu, setShowMenu] = React.useState(false);
   const [open, cycleOpen] = useCycle(false, true);
   const [activeId, setActiveId] = React.useState(0);
   const mobileNavRef = React.useRef(null);
-  const observers = React.useRef([])
+  const observers = React.useRef([]);
   const location = useLocation();
 
   useEffect(() => {
@@ -39,8 +39,11 @@ const Navbar = ({observerRefs}) => {
   }, []);
 
   const observerCallback = async (e, key) => {
+    console.log(e);
     if (e.length && e[0].isIntersecting) {
       setActiveId(key);
+    } else {
+      setActiveId(0);
     }
   };
 

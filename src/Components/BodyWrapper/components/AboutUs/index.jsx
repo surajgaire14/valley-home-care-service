@@ -27,12 +27,12 @@ const AboutUs = ({ observerRefs }) => {
   return (
     <motion.div
       className="about__container"
-      id="about__container"
+      id="about__container about"
       ref={aboutRef}
       style={{ opacity: opacity }}
-      // itemRef={el => console.log(el)}
+      data-section-id = "about__section"
     >
-      <div className="wrapper" ref={(el) => (observerRefs.current = el)}>
+      <div className="wrapper" ref={(el) => (observerRefs.current[1] = el)}>
         <div className="about">
           <h2>About Us</h2>
           <p>

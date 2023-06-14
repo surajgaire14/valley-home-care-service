@@ -21,7 +21,7 @@ const services = [
   },
 ];
 
-const Services = () => {
+const Services = ({ observerRefs }) => {
   const serviceRef = React.useRef(null);
 
   const { scrollYProgress } = useScroll({
@@ -36,8 +36,9 @@ const Services = () => {
       id="services__container"
       ref={serviceRef}
       style={{ opacity: opacity }}
+      data-section-id = "services__section"
     >
-      <div className="wrapper">
+      <div className="wrapper" ref={(el) => (observerRefs.current[2] = el)}>
         <div className="title__container">
           <h1>Why Choose Home Valley Care Service ?</h1>
           <button>Learn More About Us</button>
