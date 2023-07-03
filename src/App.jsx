@@ -11,10 +11,11 @@ function App() {
   const observerRefs = React.useRef([]);
   return (
     <main className="main__wrapper">
+      {/* <section id="#"></section> */}
       <TopNavbar />
-      <Navbar observerRefs = {observerRefs} />
+      <Navbar observerRefs={observerRefs} />
       <Routes>
-        <Route path="/" element={<BodyWrapper observerRefs = {observerRefs} />} />
+        <Route path="/" element={<BodyWrapper observerRefs={observerRefs} />} />
         <Route path="about" element={<About />} />
       </Routes>
       <Footer />

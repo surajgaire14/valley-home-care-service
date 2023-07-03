@@ -31,39 +31,39 @@ const Services = ({ observerRefs }) => {
 
   const opacity = useTransform(scrollYProgress, [0, 0.9], [1, 0]);
   return (
-    <motion.div
-      className="services__container"
-      id="services__container"
-      ref={serviceRef}
-      style={{ opacity: opacity }}
-      data-section-id = "services__section"
-    >
-      <div className="wrapper" ref={(el) => (observerRefs.current[2] = el)}>
-        <div className="title__container">
-          <h1>Why Choose Home Valley Care Service ?</h1>
-          <button>Learn More About Us</button>
-        </div>
-        <div className="services">
-          {services.map((service, index) => {
-            return (
-              <div className="service" key={index}>
-                <div className="img__wrapper">
-                  <img
-                    src={service.img}
-                    alt="unsplash-image"
-                    width={"100%"}
-                    height={400}
-                  />
+    <section id="services__container">
+      <motion.div
+        className="services__container"
+        ref={serviceRef}
+        style={{ opacity: opacity }}
+      >
+        <div className="wrapper">
+          <div className="title__container">
+            <h1>Why Choose Home Valley Care Service ?</h1>
+            <button>Learn More About Us</button>
+          </div>
+          <div className="services">
+            {services.map((service, index) => {
+              return (
+                <div className="service" key={index}>
+                  <div className="img__wrapper">
+                    <img
+                      src={service.img}
+                      alt="unsplash-image"
+                      width={"100%"}
+                      height={400}
+                    />
+                  </div>
+                  <div className="desp">
+                    <h3>{service.title}</h3>
+                  </div>
                 </div>
-                <div className="desp">
-                  <h3>{service.title}</h3>
-                </div>
-              </div>
-            );
-          })}
+              );
+            })}
+          </div>
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </section>
   );
 };
 

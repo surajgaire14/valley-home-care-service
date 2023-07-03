@@ -13,7 +13,7 @@ import "../../variable.scss";
 const BodyWrapper = ({ observerRefs }) => {
   return (
     <div className="bodywrapper__container">
-      <Hero observerRefs={observerRefs}/>
+      <Hero observerRefs={observerRefs} />
       <CEOWords />
       <Video />
       <AboutUs observerRefs={observerRefs} />
