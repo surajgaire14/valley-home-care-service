@@ -3,7 +3,6 @@ import "./style.scss";
 import { motion, AnimatePresence } from "framer-motion";
 
 export const links = [
-  { link: "Home", href: "#"  },
   { link: "About Us", href: "#about__container" },
   { link: "Services", href: "#services__container" },
   { link: "Training", href: "#training__container" },

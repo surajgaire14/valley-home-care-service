@@ -22,7 +22,7 @@ const slidesDate = [
   },
 ];
 
-const Hero = ({ observerRefs }) => {
+const Hero = () => {
   // const titleRef = React.useRef(null);
   // const desp = React.useRef(null);
   // const { scrollYProgress } = useScroll({
@@ -53,7 +53,6 @@ const Hero = ({ observerRefs }) => {
           delay: 5000,
           disableOnInteraction: false,
         }}
-        ref={(el) => (observerRefs.current[0] = el)}
       >
         {slidesDate.map((data, index) => {
           return (

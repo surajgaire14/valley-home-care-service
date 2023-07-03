@@ -5,8 +5,24 @@ main {
   min-height: 100vh;
 }
 
-// @media screen and (max-width: 426px) {
-//   main {
-//     overflow: hidden;
-//   }
-// }
+.top__scrollbar {
+  position: fixed;
+  right: 50px;
+  bottom: 20px;
+  z-index: 99;
+  cursor: pointer;
+}
+
+.top__scrollbar p {
+  background-color: green;
+  padding: 0.5em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top__scrollbar p i {
+  color: #ffffff;
+  font-size: 18px;
+}
+

@@ -8,16 +8,45 @@ import About from "./pages/About";
 import React from "react";
 
 function App() {
-  const observerRefs = React.useRef([]);
+  const [isvisible, setIsVisible] = React.useState(false);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  };
+
+  React.useEffect(() => {
+    // Button is displayed after scrolling for 500 pixels
+    const toggleVisibility = () => {
+      if (window.scrollY > 300) {
+        setIsVisible(true);
+      } else {
+        setIsVisible(false);
+      }
+    };
+
+    window.addEventListener("scroll", toggleVisibility);
+
+    return () => window.removeEventListener("scroll", toggleVisibility);
+  }, []);
+
   return (
     <main className="main__wrapper">
-      {/* <section id="#"></section> */}
       <TopNavbar />
-      <Navbar observerRefs={observerRefs} />
+      <Navbar />
       <Routes>
-        <Route path="/" element={<BodyWrapper observerRefs={observerRefs} />} />
+        <Route path="/" element={<BodyWrapper />} />
         <Route path="about" element={<About />} />
       </Routes>
+      {isvisible && (
+        <div className="top__scrollbar" onClick={scrollToTop}>
+          <p>
+            <i className="ri-arrow-up-line"></i>
+          </p>
+        </div>
+      )}
       <Footer />
     </main>
   );
