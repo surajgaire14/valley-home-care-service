@@ -3,7 +3,7 @@ import "./style.scss";
 
 const Location = ({ observerRefs }) => {
   return (
-    <div
+    <section
       className="contact__container"
       id="contact__container"
       ref={(el) => (observerRefs.current[4] = el)}
@@ -16,7 +16,7 @@ const Location = ({ observerRefs }) => {
         loading="lazy"
         referrerPolicy="no-referrer-when-downgrade"
       ></iframe>
-    </div>
+    </section>
   );
 };
 

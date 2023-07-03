@@ -76,15 +76,12 @@ const Training = ({ observerRefs }) => {
   ];
 
   return (
-    <div>
+    <section id="training__container">
       <motion.div
         className="training__container"
-        id="training__container"
-        ref={trainingRef}
         style={{ opacity: opacity }}
-        
       >
-        <div className="wrapper" ref={(el) => (observerRefs.current[3] = el)}>
+        <div className="wrapper">
           <h1>Our Training Programs Help You Build Quality</h1>
           <span></span>
           <p>
@@ -141,7 +138,7 @@ const Training = ({ observerRefs }) => {
       {openModal && (
         <ModelComponent modalref={modalref} setOpenModal={setOpenModal} />
       )}
-    </div>
+    </section>
   );
 };
 
