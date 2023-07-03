@@ -4,7 +4,7 @@ import "./style.scss";
 import { motion } from "framer-motion";
 import { useAnimation } from "../../../../Hooks/useAnimation";
 
-const Training = ({ observerRefs }) => {
+const Training = () => {
   const [openModal, setOpenModal] = React.useState(false);
 
   const modalref = React.useRef(null);

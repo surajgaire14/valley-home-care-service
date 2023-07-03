@@ -21,7 +21,7 @@ const services = [
   },
 ];
 
-const Services = ({ observerRefs }) => {
+const Services = () => {
   const serviceRef = React.useRef(null);
 
   const { scrollYProgress } = useScroll({
