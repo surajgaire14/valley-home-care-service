@@ -56,16 +56,16 @@ const Hero = () => {
       >
         {slidesDate.map((data, index) => {
           return (
-            <SwiperSlide
-              key={index}
-            >
+            <SwiperSlide key={index}>
               <div
                 className="hero__swipper__container"
                 style={{ backgroundImage: `url(${data.img})` }}
               >
-                <motion.h1 className="title">{data.title}</motion.h1>
-                <p>{data.desp}</p>
-                <button>Get In Touch</button>
+                <div className="content">
+                  <motion.h1 className="title">{data.title}</motion.h1>
+                  <p>{data.desp}</p>
+                  <button>Get In Touch</button>
+                </div>
               </div>
             </SwiperSlide>
           );

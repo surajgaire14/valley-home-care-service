@@ -3,11 +3,13 @@
 .footer__container {
   display: flex;
   flex-direction: column;
-  background-color: $--bg-color;
+  // background-color: $--bg-color;
+  // background-color: #326b3c;
+  background-color: #008000;
   color: #fff;
   padding: 50px 0;
 
-  @media screen and (min-width:1025px) {
+  @media screen and (min-width: 1025px) {
     padding: 8vh 0;
   }
 
@@ -15,10 +17,10 @@
     width: 90%;
     padding-bottom: 40px;
     margin: 0 auto;
-    
-    @media screen and (min-width:769px) {
+
+    @media screen and (min-width: 769px) {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
       width: 80%;
       margin: 0 auto;
       justify-items: center;
@@ -33,7 +35,7 @@
     }
 
     .links {
-      p{
+      p {
         a {
           font-size: 18px;
           color: #ffffffb4;
@@ -55,7 +57,6 @@
         }
       }
     }
-    
 
     > div {
       display: flex;
@@ -73,12 +74,13 @@
         color: #ffffffb4;
       }
 
-      input,button {
+      input,
+      button {
         all: unset;
       }
       input {
         font-family: $--paragraph-font-family;
-        padding: 10px ;
+        padding: 10px;
       }
 
       .buttons {
@@ -92,9 +94,9 @@
           cursor: pointer;
           background-color: #000000;
           font-family: $--heading-font-family;
-          transition: .5s ease-in-out;
+          transition: 0.5s ease-in-out;
           font-size: 18px;
-          letter-spacing: .2px;
+          letter-spacing: 0.2px;
 
           &:hover {
             background-color: #ffffff;
@@ -102,7 +104,6 @@
           }
         }
       }
-
     }
   }
   .copyright {
@@ -111,20 +112,18 @@
     width: 80%;
     margin: 0 auto;
 
-    p{
+    p {
       gap: 2px;
-      letter-spacing: .2px;
+      letter-spacing: 0.2px;
       font-family: $--paragraph-font-family;
 
       a {
         color: rgba(213, 213, 213, 0.805);
-     
       }
 
-      @media screen and (min-width:769px) {
+      @media screen and (min-width: 769px) {
         text-align: center;
       }
-
     }
   }
 }
