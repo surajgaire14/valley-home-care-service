@@ -12,7 +12,6 @@ const Navbar = () => {
   const mobileNavRef = React.useRef(null);
   const location = useLocation();
 
-  console.log(location.pathname.length);
 
   const handleClickOutside = (e) => {
     if (mobileNavRef.current && !mobileNavRef.current.contains(e.target)) {

@@ -42,7 +42,11 @@ const TopNavbar = () => {
             </a>
           </p>
           <p>
-            <a href="https://mail.google.com/mail/u/0/#inbox" target={"_blank"}>
+            <a
+              href="mailto:valleyhomecareservices85@gmail.com"
+              target={"_blank"}
+              title="Opens default email client"
+            >
               <i className="ri-mail-line"></i>
             </a>
           </p>
