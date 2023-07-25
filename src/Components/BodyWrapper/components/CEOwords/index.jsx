@@ -16,7 +16,7 @@ const CEOWords = () => {
       style={{ opacity: opacity }}
     >
       <div>
-        <h1>Words from our CEO</h1>
+        <h1>Words from CEO</h1>
         <div className="wrapper">
           <div className="image__container">
             <img src={ceo} alt="neharika-kc" width={650} height={450} />
