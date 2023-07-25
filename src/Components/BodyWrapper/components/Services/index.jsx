@@ -39,7 +39,7 @@ const Services = () => {
       >
         <div className="wrapper">
           <div className="title__container">
-            <h1>Why Choose Home Valley Care Service ?</h1>
+            <h1>Why Choose Valley Home Care Service ?</h1>
             <button>Learn More About Us</button>
           </div>
           <div className="services">

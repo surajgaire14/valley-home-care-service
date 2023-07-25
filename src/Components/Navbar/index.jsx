@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./style.scss";
 import MobileMenu from "../MobMenu";
-import logo from "../../images/logo.png";
+import logo from "../../images/vhcslogo.png";
 import { Link, useLocation } from "react-router-dom";
 import { useCycle } from "framer-motion";
 import { links } from "../MobMenu";
@@ -11,7 +11,6 @@ const Navbar = () => {
   const [open, cycleOpen] = useCycle(false, true);
   const mobileNavRef = React.useRef(null);
   const location = useLocation();
-
 
   const handleClickOutside = (e) => {
     if (mobileNavRef.current && !mobileNavRef.current.contains(e.target)) {
