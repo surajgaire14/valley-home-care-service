@@ -4,7 +4,7 @@
   display: grid;
   place-items: center;
   min-height: 100vh;
-  
+
   .wrapper {
     display: flex;
     align-items: center;
@@ -22,11 +22,13 @@
       }
 
       h1 {
-        font-size: $--heading-font-size;
+        // font-size: $--heading-font-size;
         text-align: center;
+        font-size: 44px;
         padding: 10px 0;
         color: #4bc108;
       }
+
       // q {
       //   letter-spacing: 0.2px;
       //   text-align: center;
@@ -36,8 +38,10 @@
       // }
 
       p {
-        font-size: 24px;
-        font-family: $--paragraph-font-family;
+        font-size: 30px;
+        font-family: "Dancing Script", cursive;
+
+        // font-family: $--paragraph-font-family;
         font-style: italic;
       }
     }
